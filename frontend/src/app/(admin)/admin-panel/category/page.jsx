@@ -1,5 +1,5 @@
-import PageHeader from '@/components/admin/PageHeader';
-import { getCategories } from '@/library/apis-calls';
+import PageHeader from "@/src/components/admin/PageHeader';
+import { getCategories } from "@/src/library/apis-calls';
 import Link from 'next/link';
 import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';

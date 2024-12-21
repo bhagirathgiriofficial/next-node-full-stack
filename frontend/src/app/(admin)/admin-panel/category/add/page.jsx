@@ -1,6 +1,6 @@
 "use client";
-import PageHeader from '@/components/admin/PageHeader';
-import { showToast } from '@/library/helper';
+import PageHeader from "@/src/components/admin/PageHeader";
+import { showToast } from "@/src/library/helper";
 import React from 'react';
 import { toast } from 'react-toastify';
 
