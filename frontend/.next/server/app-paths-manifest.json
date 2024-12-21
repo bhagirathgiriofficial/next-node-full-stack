@@ -1,3 +1,4 @@
 {
-  "/(admin)/admin-panel/page": "app/(admin)/admin-panel/page.js"
+  "/(admin)/admin-panel/category/page": "app/(admin)/admin-panel/category/page.js",
+  "/(admin)/admin-panel/category/add/page": "app/(admin)/admin-panel/category/add/page.js"
 }

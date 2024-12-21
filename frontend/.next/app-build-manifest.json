@@ -6,20 +6,20 @@
       "static/css/app/(admin)/admin-panel/layout.css",
       "static/chunks/app/(admin)/admin-panel/layout.js"
     ],
-    "/(admin)/admin-panel/page": [
+    "/(admin)/admin-panel/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(admin)/admin-panel/page.js"
+      "static/chunks/app/(admin)/admin-panel/loading.js"
     ],
     "/(admin)/admin-panel/category/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(admin)/admin-panel/category/page.js"
     ],
-    "/_not-found/page": [
+    "/(admin)/admin-panel/category/add/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/(admin)/admin-panel/category/add/page.js"
     ]
   }
 }

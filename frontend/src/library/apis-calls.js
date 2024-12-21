@@ -7,8 +7,8 @@ const getCategories = () => {
             return response.data; // Optionally return data for further use
         })
         .catch((error) => {
-            console.error('Error:', error.message);
-            return []; // Optionally return default value
+            console.log('Error:', error.message);
+            return { categories: [] }; // Optionally return default value
         });
 }
 

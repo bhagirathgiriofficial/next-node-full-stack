@@ -7,8 +7,24 @@ const axiosInstance = axios.create({
 });
 
 const showToast = (flag, message) => {
-    console.log(flag,message)
-    toast({ type: flag ? 'sucess' : 'error', message: message });
+    console.log(flag, message);
+    if (flag === 1) {
+        toast.success(message);
+    } else {
+        toast.error(message);
+    }
+};
+
+const textToSlug = (text) => {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
 }
 
-export { axiosInstance, showToast };
+export { axiosInstance, showToast, textToSlug };

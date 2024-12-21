@@ -1,14 +1,13 @@
-import PageHeader from "@/src/components/admin/PageHeader';
-import { getCategories } from "@/src/library/apis-calls';
-import Link from 'next/link';
+import DeleteBtn from "@/src/components/admin/DeleteBtn";
+import PageHeader from "@/src/components/admin/PageHeader";
+import StatusBtn from "@/src/components/admin/StatusBtn";
+import { getCategories } from "@/src/library/apis-calls";
 import React from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
-import { IoIosAddCircle } from "react-icons/io";
+import { FaEdit } from 'react-icons/fa';
 
 const CategoryList = async () => {
     const data = await getCategories();
     const categories = data.categories;
-    console.log("data",data)
     const breadcrumb = [
         { text: "Dashboard", link: "/admin-panel" },
         { text: "Category List", link: null }
@@ -34,10 +33,12 @@ const CategoryList = async () => {
                                     <td className="py-3 px-6 text-left whitespace-nowrap">{index + 1}</td>
                                     <td className="py-3 px-6 text-left">{category.name}</td>
                                     <td className="py-3 px-6 text-left">{category.slug}</td>
-                                    <td className="py-3 px-6 text-left">{category.status ? "Active" : "Inactive"}</td>
+                                    <td className="py-3 px-6 text-left">
+                                        <StatusBtn current_status={category.status} id={category._id} module_url={process.env.NEXT_PUBLIC_CATEGORY_URL} />
+                                    </td>
                                     <td className="py-3 px-6 text-center">
                                         <button className="text-blue-500 hover:text-blue-700 mr-2"><FaEdit /></button>
-                                        <button className="text-red-500 hover:text-red-700"><FaTrash /></button>
+                                        <DeleteBtn id={category._id} module_url={process.env.NEXT_PUBLIC_CATEGORY_URL}/>
                                     </td>
                                 </tr>
                             ))}

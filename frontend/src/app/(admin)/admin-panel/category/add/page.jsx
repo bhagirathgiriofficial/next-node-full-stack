@@ -1,28 +1,42 @@
 "use client";
 import PageHeader from "@/src/components/admin/PageHeader";
-import { showToast } from "@/src/library/helper";
-import React from 'react';
-import { toast } from 'react-toastify';
+import { axiosInstance, showToast, textToSlug } from "@/src/library/helper";
+import React, { useRef } from 'react';
+import { toast } from 'react-toastify'; // TODO: Check the toast
+
 
 const AddCategory = () => {
+    const slug = useRef(null);
+
     const breadcrumb = [
         { text: "Dashboard", link: "/admin-panel" },
         { text: "Category List", link: "/admin-panel/category" },
         { text: "Add Category", link: null }
     ];
 
-
+    const handleNameChange = (e) => {
+        const nameValue = e.target.value;
+        const slugValue = textToSlug(nameValue);
+        slug.current.value = slugValue;
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        showToast(true, "Category added successfully");
         const name = e.target.name.value;
         const slug = e.target.slug.value;
         const data = {
             name,
             slug
         };
-        console.log(data);
+        axiosInstance.post(process.env.NEXT_PUBLIC_CATEGORY_URL + "/create", data)
+            .then((response) => {
+                if (response.data.flag == 1) {
+                    e.target.reset();
+                }
+                showToast(response.data.flag, response.data.message);
+            }).catch((error) => {
+                console.log(error);
+            });
     }
 
 
@@ -40,6 +54,7 @@ const AddCategory = () => {
                                 Category Name
                             </label>
                             <input
+                                onChange={handleNameChange}
                                 type="text"
                                 id="name"
                                 name="name"
@@ -52,6 +67,8 @@ const AddCategory = () => {
                                 Category Slug
                             </label>
                             <input
+                                ref={slug}
+                                readOnly={true}
                                 type="text"
                                 id="slug"
                                 name="slug"
