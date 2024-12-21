@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "/(admin)/admin-panel/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(admin)/admin-panel/layout.css",
+      "static/chunks/app/(admin)/admin-panel/layout.js"
+    ],
+    "/(admin)/admin-panel/category/add/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(admin)/admin-panel/category/add/page.js"
+    ]
+  }
+}
