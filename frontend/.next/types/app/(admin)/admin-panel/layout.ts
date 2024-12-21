@@ -1,8 +1,8 @@
-// File: /Users/bhagirath_mac/Documents/mern stack/ecommerce-full-stack/frontend/app/(admin)/admin-panel/layout.jsx
-import * as entry from '../../../../../app/(admin)/admin-panel/layout.js'
+// File: /Users/bhagirath_mac/Documents/mern stack/ecommerce-full-stack/frontend/src/app/(admin)/admin-panel/layout.jsx
+import * as entry from '../../../../../src/app/(admin)/admin-panel/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../app/(admin)/admin-panel/layout.js')
+type TEntry = typeof import('../../../../../src/app/(admin)/admin-panel/layout.js')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }

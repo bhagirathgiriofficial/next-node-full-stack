@@ -6,10 +6,10 @@
       "static/css/app/(admin)/admin-panel/layout.css",
       "static/chunks/app/(admin)/admin-panel/layout.js"
     ],
-    "/(admin)/admin-panel/category/add/page": [
+    "/(admin)/admin-panel/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(admin)/admin-panel/category/add/page.js"
+      "static/chunks/app/(admin)/admin-panel/page.js"
     ]
   }
 }
